@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   FARMER'S CHOICE THEME
+   ========================================= */
+
+:root {
+  --fc-green: #16833B;
+  --fc-dark-green: #0B5D2A;
+
+  /* Main page background */
+  --fc-background: #EAF6EC;
+
+  /* Slightly darker green for sections */
+  --fc-section: #E2F2E5;
+
+  /* White cards */
+  --fc-card: #FFFFFF;
+
+  --fc-light-green: #DDF1E1;
+
+  --fc-text: #18231B;
+  --fc-muted: #68736B;
+  --fc-border: #CFE3D2;
+}
+
+/* =========================================
+   GLOBAL PAGE
+   ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  font-family: "Manrope", sans-serif;
+
+  /* WHOLE WEBSITE BACKGROUND */
+  background: #EAF6EC !important;
+
+  color: var(--fc-text);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  background: #EAF6EC;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #DCEFE0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9BCFA3;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6FBA7B;
+}
+
+/* =========================================
+   MATERIAL SYMBOLS
+   ========================================= */
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+
+  font-weight: normal;
+  font-style: normal;
+
+  font-size: 24px;
+  line-height: 1;
+
+  letter-spacing: normal;
+  text-transform: none;
+
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+
+  direction: ltr;
+
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   COMPONENTS
+   ========================================= */
+
+@layer components {
+
+  /* -----------------------------------------
+     CARD
+     ----------------------------------------- */
+
+  .fc-card {
+    @apply bg-white rounded-2xl border shadow-sm;
+
+    border-color: #CFE3D2;
+  }
+
+  /* -----------------------------------------
+     MAIN GREEN BUTTON
+     ----------------------------------------- */
+
+  .fc-button {
+    @apply text-white font-bold rounded-xl px-5 py-3
+           transition-all duration-200 cursor-pointer;
+
+    background-color: #16833B;
+  }
+
+  .fc-button:hover {
+    background-color: #0B5D2A;
+    box-shadow: 0 5px 15px rgba(22, 131, 59, 0.20);
+  }
+
+  .fc-button:active {
+    transform: scale(0.98);
+  }
+
+  /* -----------------------------------------
+     SECONDARY BUTTON
+     ----------------------------------------- */
+
+  .fc-button-secondary {
+    @apply font-bold rounded-xl px-5 py-3
+           transition-all duration-200 cursor-pointer;
+
+    background-color: #DDF1E1;
+    color: #16833B;
+  }
+
+  .fc-button-secondary:hover {
+    background-color: #CBE8D0;
+    color: #0B5D2A;
+  }
+
+  /* -----------------------------------------
+     INPUT
+     ----------------------------------------- */
+
+  .fc-input {
+    @apply w-full rounded-xl bg-white px-4 py-3 outline-none;
+
+    border: 1px solid #CFE3D2;
+  }
+
+  .fc-input:focus {
+    border-color: #16833B;
+
+    box-shadow:
+      0 0 0 3px rgba(22, 131, 59, 0.12);
+  }
+}
+
+/* =========================================
+   ALL BUTTONS GREEN
+   ========================================= */
+
+button {
+  background-color: #16833B !important;
+
+  color: #FFFFFF !important;
+
+  border-color: #16833B !important;
+
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover {
+  background-color: #0B5D2A !important;
+
+  border-color: #0B5D2A !important;
+
+  box-shadow:
+    0 4px 12px rgba(22, 131, 59, 0.18);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+/* =========================================
+   LINKS USED AS BUTTONS
+   ========================================= */
+
+a[class*="bg-blue"],
+a[class*="bg-indigo"],
+a[class*="bg-purple"],
+a[class*="bg-black"] {
+  background-color: #16833B !important;
+  color: #FFFFFF !important;
+  border-color: #16833B !important;
+}
+
+a[class*="bg-blue"]:hover,
+a[class*="bg-indigo"]:hover,
+a[class*="bg-purple"]:hover,
+a[class*="bg-black"]:hover {
+  background-color: #0B5D2A !important;
+  border-color: #0B5D2A !important;
+}
+
+/* =========================================
+   GREEN UTILITY CLASSES
+   ========================================= */
+
+.fc-green-text {
+  color: #16833B;
+}
+
+.fc-dark-green-text {
+  color: #0B5D2A;
+}
+
+.fc-green-bg {
+  background-color: #16833B;
+}
+
+.fc-light-green-bg {
+  background-color: #DDF1E1;
+}
+
+.fc-page-bg {
+  background-color: #EAF6EC;
+}
+
+.fc-section-bg {
+  background-color: #E2F2E5;
+}
+
+.fc-green-border {
+  border-color: #CFE3D2;
+}
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+  background: #BFE1C5;
+  color: #0B5D2A;
+}
